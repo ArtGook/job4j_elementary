@@ -1,42 +1,34 @@
 package ru.job4j.condition;
 
-import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class PointTest {
 
     @Test
-    public void when00to20then2() {
-        double expected = 2;
-        int x1 = 0;
-        int y1 = 0;
-        int x2 = 2;
-        int y2 = 0;
-        double out = Point.distance(x1, y1, x2, y2);
-        Assert.assertEquals(expected, out, 0.01);
+    public void when09to02then2() {
+        Point distance = new Point(0, 9);
+        Point that = new Point(0, 2);
+        distance.distance(that);
+        double expected = 7.0;
+        assertThat(distance.distance(that)).isEqualTo(expected);
     }
 
     @Test
-    public void when70to20then5() {
-        double expected = 5;
-        int x1 = 7;
-        int y1 = 0;
-        int x2 = 2;
-        int y2 = 0;
-        double out = Point.distance(x1, y1, x2, y2);
-        Assert.assertEquals(expected, out, 0.01);
+    public void when19to13then2() {
+        Point distance = new Point(1, 9);
+        Point that = new Point(1, 3);
+        distance.distance(that);
+        double expected = 6.0;
+        assertThat(distance.distance(that)).isEqualTo(expected);
     }
 
     @Test
-    public void when04to03then1() {
-        double expected = 1;
-        int x1 = 0;
-        int y1 = 4;
-        int x2 = 0;
-        int y2 = 3;
-        double out = Point.distance(x1, y1, x2, y2);
-        Assert.assertEquals(expected, out, 0.01);
+    public void when50to10then2() {
+        Point distance = new Point(5, 0);
+        Point that = new Point(1, 0);
+        distance.distance(that);
+        double expected = 4.0;
+        assertThat(distance.distance(that)).isEqualTo(expected);
     }
 }

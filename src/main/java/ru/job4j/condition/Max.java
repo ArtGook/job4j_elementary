@@ -6,6 +6,14 @@ public class Max {
         return result;
     }
 
+    public int max(int one, int two, int three) {
+        return max(one, max(two, three));
+    }
+
+    public int max(int one, int two, int three, int four) {
+        return max(one, two, max(three, four));
+    }
+
     public static void main(String[] args) {
         int rsl1 = Max.max(20, 4);
         System.out.println("max value = " + rsl1);
